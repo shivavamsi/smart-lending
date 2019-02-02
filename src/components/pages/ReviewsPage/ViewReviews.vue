@@ -4,7 +4,7 @@
       <b-jumbotron bg-variant="transparent" header="Most Recent Customer Reviews" header-level="4">
         <br>
         <!--b-row align-h="end"-->
-        <b-link to="/reviews/create">
+        <b-link :to="{ name: 'create-review'}">
           <b-button variant="outline-success">Write your review</b-button>
         </b-link>
       </b-jumbotron>

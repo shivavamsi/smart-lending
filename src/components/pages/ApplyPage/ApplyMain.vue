@@ -59,7 +59,7 @@
         <hr class="my-4">
         <h1>Continue where you left!</h1>
         <br>
-        <b-form>
+        <!--b-form>
           <b-row align-h="center" align-v="center">
             <b-col cols="4">
               <p>First Name:</p>
@@ -98,18 +98,17 @@
             </b-col>
           </b-row>
           <br>
-          <b-row align-h="center" align-v="center">
-            <b-col cols="5"></b-col>
-            <b-col cols="3">
-              <!--b-link :to="{ name: 'Application', params: {application} }"-->
-              <b-button
-                v-on:click.prevent="continueApplication"
-                variant="outline-success"
-              >Continue Application</b-button>
-              <!--/b-link-->
-            </b-col>
-          </b-row>
-        </b-form>
+
+        </b-form-->
+        <b-row align-h="center" align-v="center">
+          <b-col cols="5"></b-col>
+          <b-col cols="3">
+            <b-button
+              v-on:click.prevent="continueApplication"
+              variant="outline-success"
+            >Continue Application</b-button>
+          </b-col>
+        </b-row>
       </b-jumbotron>
     </b-container>
   </div>
@@ -132,11 +131,15 @@ export default {
       }
     };
   },
-
+  firestore() {
+    return {
+      reviews: db.collection("reviews").orderBy("time", "asc")
+    };
+  },
   methods: {
     startApplication: function() {
       var tempApplication = this.application;
-      this.$router.push({ name: "Application", params: { tempApplication } });
+      this.$router.push({ name: "application", params: { tempApplication } });
     },
     continueApplication: function() {
       var collectionReference = db.collection("applications");
@@ -166,7 +169,7 @@ export default {
             var tempApplication = this.application;
             var tempId = this.applicationId;
             this.$router.push({
-              name: "Application",
+              name: "application",
               params: { tempApplication, tempId }
             });
           }.bind(this)

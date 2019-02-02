@@ -16,7 +16,9 @@ Vue.use(VueFirestore);
 // 3. Create the router instance and pass the `routes` option
 const router = new VueRouter({
   routes: Routes, // short for `routes: routes`
-  mode: 'history'
+  mode: 'history',
+  base: document.querySelector('#app').getAttribute('data-path') || '/',
+  relative: true
 })
 
 

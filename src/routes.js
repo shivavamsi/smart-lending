@@ -10,40 +10,43 @@ import CreateReview from "./components/pages/ReviewsPage/CreateReview.vue";
 
 // 2. Define routes
 export default [{
-        path: '/',
+        path: '/smart-lending/',
+        name: 'home',
         component: Home
     },
     {
-        path: '/home',
-        component: Home
-    },
-    {
-        path: '/apply',
+        path: '/smart-lending/apply',
+        name: 'apply',
         component: ApplyMain
     },
     {
-        path: '/application',
-        name: 'Application',
+        path: '/smart-lending/application',
+        name: 'application',
         component: Application
     },
     {
-        path: '/faq',
+        path: '/smart-lending/faq',
+        name: 'faq',
         component: FAQ
     },
     {
-        path: '/contact',
+        path: '/smart-lending/contact',
+        name: 'contact',
         component: Contact
     },
     {
-        path: '/about',
+        path: '/smart-lending/about',
+        name: 'about',
         component: About
     },
     {
-        path: '/reviews/view',
+        path: '/smart-lending/reviews/view',
+        name: 'view-reviews',
         component: ViewReviews
     },
     {
-        path: '/reviews/create',
+        path: '/smart-lending/reviews/create',
+        name: 'create-review',
         component: CreateReview
     }
 ]
